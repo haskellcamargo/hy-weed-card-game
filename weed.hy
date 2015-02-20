@@ -20,4 +20,7 @@
                     :Hippie 3
                     :Busted 2
                     :Potzilla 1})
-    (setv ndecks (.ceil math (/ total-players 4)))))
+    (setv ndecks (.ceil math (/ total-players 4)))
+    (for [cardname amount (.iteritems deckset)] (
+        (.extend deck (* amount [cardname]))))
+    ))
