@@ -46,4 +46,15 @@
 ; Play order generator
 (defn create-player-order [humans bots]
   (do
-    (setv playerorder [])))
+    (setv playerorder [])
+    (cond [(humans) (for [k (range 0 humans)] ( ; Add humans
+            (.append playorder (+ "Human " (str (+ k 1))))))]
+          [(bots) (for [k (range 0 bots)] ( ; Add bots
+            (.append playorder (+ "Bots " (str (+ k 1))))))])
+    ; Shuffle the list
+    (suffle playorder)
+    (playorder)))
+
+; Displays a GUI returning an action
+
+
