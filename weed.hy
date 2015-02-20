@@ -38,4 +38,12 @@
         ; And add an amount of them to the deck array
         (.extend deck (* amount [cardname]))))
     ; Multiplies the deck array for each deck we are gonna use
-    (setv deck (* ndeck deck))))
+    (setv deck (* ndeck deck))
+    ; Shuffles the deck array
+    (shuffle deck)
+    (deck))
+  
+; Play order generator
+(defn create-player-order [humans bots]
+  (do
+    (setv playerorder [])))
